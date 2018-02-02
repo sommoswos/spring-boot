@@ -1,10 +1,12 @@
 package com;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.config.DBConfigProperties;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
 
 
 /**
@@ -13,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@MapperScan(basePackages="com.lili.mapper")
+@MapperScan(basePackages="com.mapper")
 public class DataSourceConfigUration {
 
 
@@ -23,13 +25,16 @@ public class DataSourceConfigUration {
      * @return
      */
     @Bean
-    public DataSourceProperties dataSource(DBConfigProperties dbConfigProperties) {
-        DataSourceProperties dataSourceProperties = new DataSourceProperties();
-        dataSourceProperties.setUrl(dbConfigProperties.getUrl());
-        dataSourceProperties.setDriverClassName(dataSourceProperties.getDriverClassName());
-        dataSourceProperties.setUsername(dataSourceProperties.getDataUsername());
-        dataSourceProperties.setPassword(dataSourceProperties.getPassword());
-        return dataSourceProperties;
+    public DataSource druidDataSource(DBConfigProperties dbConfigProperties) {
+        DruidDataSource druidDataSource = new DruidDataSource();
+        druidDataSource.setUrl(dbConfigProperties.getUrl());
+        druidDataSource.setDriverClassName(dbConfigProperties.getDriverClass());
+        druidDataSource.setUsername(dbConfigProperties.getUsernamel());
+        dbConfigProperties.setPassword(dbConfigProperties.getPassword());
+        return druidDataSource;
     }
+
+
+
 
 }
