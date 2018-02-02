@@ -1,5 +1,5 @@
 package com.service;
 
-public interface indexService {
+public interface IndexService {
 	public void addUser();
 }

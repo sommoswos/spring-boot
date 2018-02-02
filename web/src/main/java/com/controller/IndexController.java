@@ -1,8 +1,8 @@
 package com.controller;
 
 import com.entity.User;
-import com.lili.mapper.userMapper;
-import com.lili.service.indexService;
+import com.mapper.UserMapper;
+import com.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class IndexController {
-	
+
 	@Autowired
-	private indexService indexService;
+	private IndexService indexService;
 	@Autowired
-	private userMapper userMapper;
+	private UserMapper userMapper;
 	
 	@ResponseBody
 	@RequestMapping("/index")

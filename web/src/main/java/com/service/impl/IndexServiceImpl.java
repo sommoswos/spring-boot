@@ -1,10 +1,10 @@
 package com.service.impl;
 
-import com.service.indexService;
+import com.service.IndexService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class indexServiceImpl implements indexService {
+public class IndexServiceImpl implements IndexService {
 
 	@Override
 	public void addUser() {
