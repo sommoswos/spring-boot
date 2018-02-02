@@ -1,11 +1,10 @@
-package com.lili.mapper;
+package com.mapper;
 
+import com.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.lili.entity.User;
-
 public interface userMapper {
 	@Select("select * from user where username=#{username}")
-	User findUser(@Param("username")String userName);
+	User findUser(@Param("username") String userName);
 }

@@ -1,4 +1,4 @@
-package com.lili.entity;
+package com.entity;
 
 public class User {
 	
